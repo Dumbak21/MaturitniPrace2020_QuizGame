@@ -1,0 +1,8 @@
+API pro otázky na serveru (Get: localhost:3000/randomQuestion/dificulty-1/česky)
+server console z něj táhá otázky a posílá uživatelům.
+
+uživatel komunikuje pouze s server consolí.
+
+uživatel 1 začne hru -> pošle dotaz na otázku -> server si řekne api -> pošle otázku pro uživatele 1 všem s informací co se děje (pro koho je). až uživatel odpoví -> pošle serveru odpověˇa on podle id otázky najde zda odpověděl dobře (Get: localhost:3000/answer/question56/česky) pokud je správná pošle informaci a správnosti opovědi všem.
+
+nebo logika bude probíhat u klienta -> dostane otázku i s odpovědí a na server se pouze pošle zda odpovědel správně a ten to oznámí dále

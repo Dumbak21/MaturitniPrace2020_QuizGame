@@ -1,0 +1,10 @@
+Logika Server x Klient?
+API pro otázky?
+Jeden klient na serveru?
+
+
+-- Net.Sockets => běží mi server
+
+-- Unity Klient => rozděluju scény -> snažím se udělat co nejefektivnější
+
+-- databáze otázek (id, otázka, náročnost, tag/druh, otevřená/zavřená)
