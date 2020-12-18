@@ -6,7 +6,7 @@ using TMPro;
 
 public class PlayButton : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Scene: Main
 
     public TMP_InputField Nick;
 

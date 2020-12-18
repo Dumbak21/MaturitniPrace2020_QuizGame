@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public static class DataManager
 {
+    #region Main
+
     public static string NickName;
 
+    #endregion
 
     #region SCENES
     public static string SceneToLoad;
@@ -32,7 +35,6 @@ public static class DataManager
     }
     #endregion
 
-
     #region SETTINGS
 
     public static float Volume = 70;
@@ -45,6 +47,9 @@ public static class DataManager
 
 
 }
+
+
+//In case of standalone app
 public class Resolution
 {
     public int[] res{ 
