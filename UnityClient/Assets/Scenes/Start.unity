@@ -722,8 +722,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e128cec61bb0944b22337397a308c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 15
   audioMixer: {fileID: 24100000, guid: 58d63a32ce0bd6f4db43b7d004c09eaa, type: 2}
+  a: 
 --- !u!4 &746277012
 Transform:
   m_ObjectHideFlags: 0
@@ -1087,8 +1087,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 533c03eac65d1564f8b9b20e6df533c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  manager: {fileID: 746277011}
 --- !u!4 &1438095080
 Transform:
   m_ObjectHideFlags: 0
@@ -1230,10 +1228,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

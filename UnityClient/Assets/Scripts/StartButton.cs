@@ -11,6 +11,8 @@ public class StartButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //var gm = FindObjectOfType<GameManager>();
+        //gm.a = "a";
     }
 
     public void Back()

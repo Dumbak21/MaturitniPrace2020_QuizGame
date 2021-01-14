@@ -7,7 +7,7 @@ public static class DataManager
 {
     #region Main
 
-    public static string NickName;
+    public static string NickName = "Petr";
 
     #endregion
 
@@ -44,8 +44,10 @@ public static class DataManager
 
     #endregion
 
-
-
+    #region COLORS  
+    public static Color Green = new Color(0, 200 , 0);
+    public static Color Idle = new Color(255, 112 , 112);
+    #endregion
 }
 
 

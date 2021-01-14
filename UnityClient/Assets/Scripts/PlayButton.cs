@@ -17,7 +17,7 @@ public class PlayButton : MonoBehaviour
     public Button Create;
 
 
-    public bool exists = true;
+    public bool exists = false;
 
     void Start()
     {
