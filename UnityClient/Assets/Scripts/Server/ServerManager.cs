@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class ServerManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
+        NetworkDataHandler.InitPackets();
+        Client.Connect();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    void OnDestroy()
+    {
+        Client.AppStop();
     }
 }

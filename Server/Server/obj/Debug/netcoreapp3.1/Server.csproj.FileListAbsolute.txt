@@ -10,4 +10,3 @@ G:\Projekty - programování\aaaa -PRG\_MATURITA\Server\Server\bin\Debug\netcore
 G:\Projekty - programování\aaaa -PRG\_MATURITA\Server\Server\obj\Debug\netcoreapp3.1\Server.dll
 G:\Projekty - programování\aaaa -PRG\_MATURITA\Server\Server\obj\Debug\netcoreapp3.1\Server.pdb
 G:\Projekty - programování\aaaa -PRG\_MATURITA\Server\Server\obj\Debug\netcoreapp3.1\Server.genruntimeconfig.cache
-G:\Projekty - programování\aaaa -PRG\_MATURITA\Server\Server\obj\Debug\netcoreapp3.1\Server.csprojAssemblyReference.cache

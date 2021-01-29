@@ -37,7 +37,7 @@ public static class DataManager
 
     #region SETTINGS
 
-    public static float Volume = 70;
+    public static float Volume = 50;
     public static int Quality = 1;
     //public static Resolution resolution;
 

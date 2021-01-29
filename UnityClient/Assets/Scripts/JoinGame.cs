@@ -63,6 +63,11 @@ public class JoinGame : MonoBehaviour
         DataManager.LoadScene("Game_MAIN");
     }
 
+    public void Back()
+    {
+        DataManager.LoadPreviousScene();
+    }
+
     //private Response JoinTOServer(string Code)
     //{
     //    //join to server

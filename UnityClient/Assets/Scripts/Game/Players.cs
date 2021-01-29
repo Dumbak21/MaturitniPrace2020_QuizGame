@@ -9,6 +9,7 @@ public class Players : MonoBehaviour
 
     public GameObject PlayerList;
     public GameObject example;
+
     void Start()
     {
         //Load players from server
@@ -26,7 +27,6 @@ public class Players : MonoBehaviour
     {
         
     }
-
     
 
     private Player[] queuedPlayers;
@@ -94,6 +94,12 @@ public class Players : MonoBehaviour
 
         }
         return queuedPlayers;
+    }
+
+
+    public void Back()
+    {
+        DataManager.LoadPreviousScene();
     }
 
 }

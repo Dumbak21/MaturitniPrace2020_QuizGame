@@ -9,14 +9,19 @@ public class QaA : MonoBehaviour
 
     public TMP_Text _question;
     public GameObject answersBox;
+    public GameObject openAnswersBox;
     public Button example;
+    public Button ok;
 
     void Start()
     {
         // Get question and answers from API
-        string[] ans  = new string[4] { "1", "2", "3", "4" };
-        string que = "How many legs do elephants have";
-        SetQAinGame(AnswerType.Closed, que, ans );
+        //string[] ans  = new string[4] { "1", "2", "3", "4" };
+        //string que = "How many legs do elephants have";
+        //SetQAinGame(AnswerType.Closed, que, ans );
+
+
+        SetQAinGame(AnswerType.Open, "How long is 1 meter in meters");
     }
 
     void Update()
@@ -25,7 +30,7 @@ public class QaA : MonoBehaviour
     }
 
 
-    void SetQAinGame(AnswerType type, string question, string[] answers)
+    void SetQAinGame(AnswerType type, string question, string[] answers = null)
     {
         //var gm = FindObjectOfType<GameManager>();
 
@@ -40,6 +45,9 @@ public class QaA : MonoBehaviour
         {
             case AnswerType.Closed:
                 {
+                    answersBox.gameObject.SetActive(true);
+                    openAnswersBox.gameObject.SetActive(false);
+
                     for (int i = 0; i < 4; i++)
                     {
                         Button item = Instantiate(example, answersBox.transform);
@@ -79,6 +87,28 @@ public class QaA : MonoBehaviour
                 }
             case AnswerType.Open:
                 {
+                    openAnswersBox.gameObject.SetActive(true);
+                    answersBox.gameObject.SetActive(false);
+
+                    ok.onClick.AddListener(() => { Answered(question, openAnswersBox.transform.Find("InputField").GetComponent<TMP_InputField>().text); });
+
+
+                    if (GameManager.currentPlayer.Nickname == DataManager.NickName)
+                    {
+                        for (int i = 0; i < openAnswersBox.transform.Find("Numpad").childCount; i++)
+                        {
+                            openAnswersBox.transform.Find("Numpad").GetChild(i).GetComponent<Button>().interactable = true;
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 0; i < openAnswersBox.transform.Find("Numpad").childCount; i++)
+                        {
+                            openAnswersBox.transform.Find("Numpad").GetChild(i).GetComponent<Button>().interactable = false;
+                        }
+                    }
+
+
                     break;
                 }
         }
@@ -90,6 +120,15 @@ public class QaA : MonoBehaviour
 
     public void Answered(string question, string answear)
     {
+        if (openAnswersBox.gameObject.activeSelf)
+        {
+            if (openAnswersBox.transform.Find("InputField").GetComponent<TMP_InputField>().text.EndsWith("."))
+            {
+                BackSpace();
+            }
+            answear = openAnswersBox.transform.Find("InputField").GetComponent<TMP_InputField>().text;
+            openAnswersBox.transform.Find("InputField").GetComponent<TMP_InputField>().text = "";
+        }
         bool right = true;
         //check if ans is right
         //AskServer(question, ans) => true/false
@@ -105,6 +144,27 @@ public class QaA : MonoBehaviour
         SetQAinGame(AnswerType.Closed, "What is the first letter of alphabet", ans);
     }
 
+
+    public void OpenAddInput(int input)
+    {
+        openAnswersBox.transform.Find("InputField").GetComponent<TMP_InputField>().text += input.ToString();
+    }
+    public void BackSpace()
+    {
+        var text = openAnswersBox.transform.Find("InputField").GetComponent<TMP_InputField>().text;
+        if(text.Length > 0)
+        {
+            openAnswersBox.transform.Find("InputField").GetComponent<TMP_InputField>().text = text.Remove((text.Length - 1), 1);
+        }
+    }
+    public void OpenAddFloat()
+    {
+        if (openAnswersBox.transform.Find("InputField").GetComponent<TMP_InputField>().text.Contains("."))
+        {
+            return;
+        }
+        openAnswersBox.transform.Find("InputField").GetComponent<TMP_InputField>().text += ".";
+    }
 
 }
 

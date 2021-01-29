@@ -6,10 +6,14 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello World!");
             Console.Title = "Server";
 
-            Server.Init(50, 26950);
+            NetworkDataHandler.InitPackets();
+
+            ServerTCP.PORT = 5555;
+
+            ServerTCP.Setup();
+
             Console.ReadKey();
         }
     }

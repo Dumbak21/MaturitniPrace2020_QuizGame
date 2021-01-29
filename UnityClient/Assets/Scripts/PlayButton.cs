@@ -17,10 +17,11 @@ public class PlayButton : MonoBehaviour
     public Button Create;
 
 
-    public bool exists = false;
+    public bool exists;
 
     void Start()
     {
+        exists = false;
         Join.interactable = false;
         Create.interactable = false;
 
