@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API.Models;
+using Microsoft.AspNetCore.Identity;
+using API.Models.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
 {
@@ -22,6 +25,7 @@ namespace API.Controllers
 
         // GET: api/QuestionAnswers
         [HttpGet]
+        [Authorize(Roles="Admin")]
         public async Task<ActionResult<IEnumerable<QuestionAnswers>>> GetQA()
         {
             return await _context.QA.ToListAsync();
@@ -29,6 +33,7 @@ namespace API.Controllers
 
         // GET: api/QuestionAnswers/5
         [HttpGet("{id}")]
+        [Authorize(Roles = "Admin,Server")]
         public async Task<ActionResult<QuestionAnswers>> GetQuestionAnswers(Guid id)
         {
             var questionAnswers = await _context.QA.FindAsync(id);
@@ -45,6 +50,7 @@ namespace API.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> PutQuestionAnswers(Guid id, QuestionAnswers questionAnswers)
         {
             if (id != questionAnswers.Id)
@@ -77,6 +83,7 @@ namespace API.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<QuestionAnswers>> PostQuestionAnswers(QuestionAnswers questionAnswers)
         {
             _context.QA.Add(questionAnswers);
@@ -87,6 +94,7 @@ namespace API.Controllers
 
         // DELETE: api/QuestionAnswers/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<QuestionAnswers>> DeleteQuestionAnswers(Guid id)
         {
             var questionAnswers = await _context.QA.FindAsync(id);

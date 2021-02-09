@@ -158,6 +158,12 @@ G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1
 G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\obj\Debug\netcoreapp3.1\API.csproj.CoreCompileInputs.cache
 G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
 G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache
+G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\API.Views.dll
