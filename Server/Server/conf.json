@@ -1,0 +1,11 @@
+//{
+//  "Login": {
+//    "name": "Server",
+//    "password": "123456789"
+//  }
+//}
+
+{
+  "name": "Server",
+  "password": "123456789"
+}

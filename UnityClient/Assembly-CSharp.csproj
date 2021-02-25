@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Server\ServerManager.cs" />
+     <Compile Include="Assets\Scripts\Lobby.cs" />
      <Compile Include="Assets\Scripts\Server\DataBuffer.cs" />
      <Compile Include="Assets\Scripts\Game\Players.cs" />
      <Compile Include="Assets\Scripts\Server\Client.cs" />
@@ -64,6 +65,7 @@
      <Compile Include="Assets\Scripts\DataManager.cs" />
      <Compile Include="Assets\Scripts\Server\NetworkDataHandler.cs" />
      <Compile Include="Assets\Scripts\StartButton.cs" />
+     <Compile Include="Assets\Scripts\CraeteGame.cs" />
      <Compile Include="Assets\Scripts\Laoding.cs" />
      <Compile Include="Assets\Scripts\Light.cs" />
      <Compile Include="Assets\Scripts\PlayButton.cs" />

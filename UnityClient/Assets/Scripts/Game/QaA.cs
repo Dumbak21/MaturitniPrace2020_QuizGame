@@ -15,18 +15,22 @@ public class QaA : MonoBehaviour
 
     void Start()
     {
+        ServerManager.GetRandomQuestion();
         // Get question and answers from API
         //string[] ans  = new string[4] { "1", "2", "3", "4" };
         //string que = "How many legs do elephants have";
         //SetQAinGame(AnswerType.Closed, que, ans );
+        //SetQAinGame(AnswerType.Open, "How long is 1 meter in meters");
 
-
-        SetQAinGame(AnswerType.Open, "How long is 1 meter in meters");
+        Debug.Log(Question);
+        //SetQAinGame(AnswerType.Open, Question);
     }
+
+    public static string Question;
 
     void Update()
     {
-        
+
     }
 
 

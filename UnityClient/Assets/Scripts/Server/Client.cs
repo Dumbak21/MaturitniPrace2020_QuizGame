@@ -19,6 +19,7 @@ public class Client
     private static bool loop = true;
     public static void AppStop()
     {
+        Debug.Log("Connection terminated");
         loop = false;
     }
     //

@@ -7,8 +7,71 @@ public static class DataManager
 {
     #region Main
 
-    public static string NickName = "Petr";
+    public static string NickName = "";
+    public static string RoomCode = "";
 
+    public static bool JoinedToRoom = false;
+    public static bool NickAdded = false;
+    public static string RoomError;
+    public static string PlayerError;
+
+    public static void RoomResponse(Packets packet)
+    {
+        switch (packet)
+        {
+            case Packets.S_RoomNotFound:
+                {
+                    RoomError = "This code does not exist :(";
+                    JoinedToRoom = false;
+                    break;
+                }
+            case Packets.S_RoomFull:
+                {
+                    RoomError = "The room you're trying to join is full";
+                    JoinedToRoom = false;
+                    break;
+                }
+            case Packets.S_PlayerNotFound:
+                {
+                    //I dunno how
+                    RoomError = "You don't exist ?:)";
+                    JoinedToRoom = false;
+                    break;
+                }
+            case Packets.S_AddedToRoom:
+                {
+                    RoomError = "";
+                    JoinedToRoom = true;
+                    break;
+                }
+            case Packets.S_CreatedRoom:
+                {
+                    RoomError = "";
+                    JoinedToRoom = true;
+                    break;
+                }
+        }
+    }
+
+    public static void NickResponse(Packets packet)
+    {
+        switch (packet)
+        {
+            case Packets.S_PlayerExists:
+                {
+                    PlayerError = "This player exists :(";
+                    NickAdded = false;
+                    break;
+                }
+            case Packets.S_AddedPlayer:
+                {
+                    PlayerError = "";
+                    NickAdded = true;
+                    break;
+                }
+            
+        }
+    }
     #endregion
 
     #region SCENES

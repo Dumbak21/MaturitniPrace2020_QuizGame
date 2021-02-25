@@ -11,21 +11,20 @@ public class PlayButton : MonoBehaviour
     public TMP_InputField Nick;
 
 
-    public TMP_Text Error;
+    public TMP_Text error;
 
     public Button Join;
     public Button Create;
 
 
-    public bool exists;
+    private bool? CreateButt = null;
 
     void Start()
     {
-        exists = false;
         Join.interactable = false;
         Create.interactable = false;
 
-        Error.enabled = false;
+        error.gameObject.SetActive(false);
 
         Nick.onValueChanged.AddListener(delegate { Buttons(); });
     }
@@ -33,7 +32,33 @@ public class PlayButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (DataManager.NickAdded == true)
+        {
+            Debug.Log("Update: Added");
+            DataManager.NickName = Nick.text;
+
+            if (CreateButt == true)
+            {
+                CreateButt = null;
+                DataManager.LoadScene("CreateGame");
+            }
+            else if(CreateButt == false)
+            {
+                CreateButt = null;
+                DataManager.LoadScene("JoinGame");
+            }
+
+
+        }
+        else
+        {
+            if (DataManager.PlayerError != error.text)
+            {
+                Debug.Log("Update: New Error");
+                error.text = DataManager.PlayerError;
+                error.gameObject.SetActive(true);
+            }
+        }
     }
 
     public void Buttons()
@@ -53,39 +78,36 @@ public class PlayButton : MonoBehaviour
 
     public void Back()
     {
+        
         DataManager.LoadPreviousScene();
     }
 
     public void LoadJoinGame()
     {
-        //send Nickname to the server and ask of it exists
+
+        ServerManager.AddPlayer(Nick.text);
+        CreateButt = false;
+        //send Nickname to the server and ask if it exists
         //if it does show error mesage
         Debug.Log(Nick.text);
-        Debug.Log(exists);
-        if (exists)
-        {
-            Error.enabled = true;
-        }
-        else
-        {
-            Error.enabled = false;
-            DataManager.NickName = Nick.text;
-            DataManager.LoadScene("JoinGame");
-        }
+        //if (exists)
+        //{
+        //    Error.enabled = true;
+        //}
+        //else
+        //{
+        //    Error.enabled = false;
+        //    DataManager.NickName = Nick.text;
+        //    DataManager.LoadScene("JoinGame");
+        //}
 
     }
     public void LoadCraeteGame()
     {
-        if (exists)
-        {
-            Error.enabled = true;
-        }
-        else
-        {
-            Error.enabled = false;
-            DataManager.NickName = Nick.text;
-            DataManager.LoadScene("CreateGame");
-        }
+        ServerManager.AddPlayer(Nick.text);
+        CreateButt = true;
+
+        Debug.Log(Nick.text);
 
     }
 

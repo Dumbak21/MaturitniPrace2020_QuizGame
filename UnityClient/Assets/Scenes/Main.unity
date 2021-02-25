@@ -855,7 +855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Nick: {fileID: 1821483027}
-  Error: {fileID: 1824710325}
+  error: {fileID: 1824710325}
   Join: {fileID: 1484909721}
   Create: {fileID: 1338032587}
   exists: 1

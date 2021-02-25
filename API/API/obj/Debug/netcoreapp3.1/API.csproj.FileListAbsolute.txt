@@ -1,6 +1,5 @@
 G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\appsettings.json
-G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\API.exe
 G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\API.deps.json
 G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\API.runtimeconfig.json
@@ -167,3 +166,4 @@ G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\obj\Debug\netcoreapp3.1
 G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
 G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache
 G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\bin\Debug\netcoreapp3.1\API.Views.dll
+G:\Projekty - programování\aaaa -PRG\_MATURITA\API\API\obj\Debug\netcoreapp3.1\scopedcss\bundle\API.styles.css

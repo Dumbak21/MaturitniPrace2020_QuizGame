@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HDgC+9pr63OaPNVZHes+aGGcNwUtRdDCi4qAWgYVwOBp/DeN7uilqNiFmfZ7xoPs8hmIj1nZhTMAu+O1e/gCiQ==",
+  "dgSpecHash": "rYOo43/IOmcJTzUVqm/SajNX7ZzulaFHmqLvB9llNY79dTiTrK4IdLgHT3o1MiDI7s55bNLwvQO7EquLsvNrnA==",
   "success": true,
   "projectFilePath": "G:\\Projekty - programování\\aaaa -PRG\\_MATURITA\\Server\\Server\\Server.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Petr\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

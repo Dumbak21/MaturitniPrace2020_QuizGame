@@ -48,15 +48,15 @@ namespace API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1bbbfce9-220c-4806-ab59-ccbcf2be76a3",
-                            ConcurrencyStamp = "36a0caa4-696d-442e-b9d5-b320c3d4afbb",
+                            Id = "e6f2861a-8b38-445b-914d-401504ed5f9e",
+                            ConcurrencyStamp = "e99b89fe-58bf-456f-adf7-9636c7624b41",
                             Name = "Server",
                             NormalizedName = "SERVER"
                         },
                         new
                         {
-                            Id = "53067062-b36f-4eb9-83b6-60870be08fcf",
-                            ConcurrencyStamp = "0ab2edea-6fee-4528-ab16-b5a256515033",
+                            Id = "c0b24946-8089-44bb-be2b-bba7e1e93bb1",
+                            ConcurrencyStamp = "bcb47a53-911e-415d-8901-23304795fc6c",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -129,30 +129,30 @@ namespace API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d2bc5239-a07f-4ce7-9e8d-c052f8b48f8b",
+                            Id = "6f413e34-4e77-4e97-bdde-b9c5785c962e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2b29e861-0fe8-4e15-bdbd-54d07cfc1db0",
+                            ConcurrencyStamp = "66f88017-301b-404b-b95a-0a732ab39111",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "SERVER",
-                            PasswordHash = "AQAAAAEAACcQAAAAELXKrmhieyHG6xeWRhbgXzlBAX09p949IG9kqbXJnrNPoxkP3csHfMTif56BCYCDYA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFGHB7wYhni6euloPQz6W5aFfrZFtwezWifV60hSxsH0VEQQFqK7WecxTEKBovo1XA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "af40035f-b1b3-4e8f-aad3-06f0b0732a39",
+                            SecurityStamp = "9f5b6d9b-f461-484c-b5f6-c37924da1f84",
                             TwoFactorEnabled = false,
                             UserName = "Server"
                         },
                         new
                         {
-                            Id = "ae293e8f-856f-4055-baf3-28d9f315fe31",
+                            Id = "485d3c35-a600-4e20-a83c-74688ba33fd4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e85a9c4c-17b8-4c9e-829d-c41fdb23bc1b",
+                            ConcurrencyStamp = "8369c548-a3cf-4472-8e24-816ce7ba4c33",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            LockoutEnd = new DateTimeOffset(new DateTime(2021, 2, 8, 23, 23, 49, 533, DateTimeKind.Unspecified).AddTicks(5490), new TimeSpan(0, 1, 0, 0, 0)),
+                            LockoutEnd = new DateTimeOffset(new DateTime(2021, 2, 20, 21, 8, 51, 697, DateTimeKind.Unspecified).AddTicks(9351), new TimeSpan(0, 1, 0, 0, 0)),
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJCyR+AO+FOXQBhZKJD5XHT2zkaxXO0QbfB+9xbnp3fWofV7FCpH4s1f3cwPdw/7SQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDfgA9ZLWR6LKjpD6vK0Rp7d/GECMBbcQ0Ao8Sf0uLTTnM+Ejqosku51eNUkkXd24g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0a3875b1-d0df-4b49-b0df-330910f1ed4d",
+                            SecurityStamp = "ba209ced-9b01-45f1-8fdc-38c52af1b9d0",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -187,7 +187,7 @@ namespace API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("33ff5eaf-4a68-436d-b538-b8d365bd75f6"),
+                            Id = new Guid("5becd24f-0c9a-49a9-81ed-2b0e262db1ad"),
                             Answers = "1°2°3°4",
                             Area = 4,
                             Question = "How much is 2+2",
@@ -195,7 +195,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            Id = new Guid("256c24db-a386-4fb6-bd0a-c00dcfd0fe87"),
+                            Id = new Guid("5063d25b-ce1f-4ed6-920c-74ff40ea1e2e"),
                             Answer = "1021",
                             Area = 4,
                             Question = "How much is 1000+21",
@@ -203,7 +203,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            Id = new Guid("01c98624-15ff-4e7e-a164-05cb0652e1dc"),
+                            Id = new Guid("fb4d5f36-c818-4cea-9c3f-2dc63e5878eb"),
                             Answers = "c°d°3°z",
                             Area = 4,
                             Question = "Last letter in alphabet",
@@ -281,31 +281,6 @@ namespace API.Migrations
                     b.ToTable("AspNetUserLogins");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
-                {
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("UserId", "RoleId");
-
-                    b.ToTable("IdentityUserRole<Guid>");
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = new Guid("d2bc5239-a07f-4ce7-9e8d-c052f8b48f8b"),
-                            RoleId = new Guid("1bbbfce9-220c-4806-ab59-ccbcf2be76a3")
-                        },
-                        new
-                        {
-                            UserId = new Guid("ae293e8f-856f-4055-baf3-28d9f315fe31"),
-                            RoleId = new Guid("53067062-b36f-4eb9-83b6-60870be08fcf")
-                        });
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
                     b.Property<string>("UserId")
@@ -319,6 +294,18 @@ namespace API.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "6f413e34-4e77-4e97-bdde-b9c5785c962e",
+                            RoleId = "e6f2861a-8b38-445b-914d-401504ed5f9e"
+                        },
+                        new
+                        {
+                            UserId = "485d3c35-a600-4e20-a83c-74688ba33fd4",
+                            RoleId = "c0b24946-8089-44bb-be2b-bba7e1e93bb1"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

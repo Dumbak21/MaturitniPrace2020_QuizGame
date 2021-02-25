@@ -33,6 +33,7 @@ namespace API.Controllers
             _roleManager = roleManager;
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult GetLogin()
         {
@@ -44,60 +45,58 @@ namespace API.Controllers
             return NotFound();
         }
 
-        [Authorize]
-        [HttpGet("claims")]
-        public object Claims()
-        {
-            return User.Claims.Select(c =>
-            new
-            {
-                Type = c.Type,
-                Value = c.Value
-            });
-        }
+        //[Authorize]
+        //[HttpGet("claims")]
+        //public object Claims()
+        //{
+        //    return User.Claims.Select(c =>
+        //    new
+        //    {
+        //        Type = c.Type,
+        //        Value = c.Value
+        //    });
+        //}
 
-
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Login([FromBody] UserIM userData)
         {
+            Console.Write(userData.ToString());
+
             var result = await _signInManager.PasswordSignInAsync(userData.Name, userData.Password, false, false);
 
             if (result.Succeeded)
             {
                 var user = await _userManager.FindByNameAsync(userData.Name);
-                string token = await GenerateJSONWebToken(user);
+                string token = GenerateJSONWebToken(user);
                 return Ok(token);
             }
             return Forbid();
         }
 
-        private Task<string> GenerateJSONWebToken(AppUser user)
+        private string GenerateJSONWebToken(AppUser user)
         {
-            return Task.Run(() =>
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var claims = new[] 
             {
+                new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                //new Claim(type:ClaimTypes.Role, _roleManager.FindByNameAsync(user.UserName).Result.ToString())
+            };
 
-                var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-                var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-                var claims = new[] 
-                {
-                    new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim(type:ClaimTypes.Role, _roleManager.FindByNameAsync(user.UserName).Result.ToString())
-                };
+            //ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "Token");
+            //claimsIdentity.AddClaim(new Claim(ClaimTypes.Role, _roleManager.FindByNameAsync(user.UserName).Result.ToString()));
+            //User.AddIdentity(claimsIdentity);
 
-                //ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "Token");
-                //claimsIdentity.AddClaim(new Claim(ClaimTypes.Role, _roleManager.FindByNameAsync(user.UserName).Result.ToString()));
-                //User.AddIdentity(claimsIdentity);
-
-                var expiration = DateTime.Now.AddMinutes(10);
-                var token = new JwtSecurityToken(_config["Jwt:Issuer"],
-                    _config["Jwt:Audience"],
-                    claims,
-                    expires: expiration,
-                    signingCredentials: credentials);
-                var accessToken = new JwtSecurityTokenHandler().WriteToken(token);
-                return accessToken;
-            });            
+            var expiration = DateTime.Now.AddMinutes(10);
+            var token = new JwtSecurityToken(_config["Jwt:Issuer"],
+                _config["Jwt:Audience"],
+                claims,
+                expires: expiration,
+                signingCredentials: credentials);
+            var accessToken = new JwtSecurityTokenHandler().WriteToken(token);
+            return accessToken;           
         }
     }
 }
